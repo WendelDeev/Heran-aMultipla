@@ -1,22 +1,29 @@
 
 package HerançaMu.application;
 
-import HerançaMu.Devices.Printer;
-import HerançaMu.Devices.Scanner;
+import HerançaMu.Devices.ComboDevice;
+import HerançaMu.Devices.ConcretePrinter;
+import HerançaMu.Devices.ConcreteScanner;
 
 public class Program {
 
     
     public static void main(String[] args) {
         
-        Printer p = new Printer("1080");
+        ConcretePrinter p = new ConcretePrinter("1080");
         p.processDoc("my latter");
         p.print("My letter");
         
-        Scanner s = new Scanner("2003");
+        System.out.println("");
+        ConcreteScanner s = new ConcreteScanner("2003");
         s.processDoc("My email");
         System.out.println("Scan result: " + s.scan());
         
+        System.out.println("");
+        ComboDevice c = new ComboDevice("2080");
+        c.processDoc("hay");
+        c.print("hay print");
+        System.out.println("Scan result: " + c.scan());
     }
     
 }
